@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */; };
+		E3FADA4E1FDD720D005CDA2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA4D1FDD720D005CDA2E /* GameScene.sks */; };
+		E3FADA501FDD720D005CDA2E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA4F1FDD720D005CDA2E /* Actions.sks */; };
+		E3FADA521FDD720D005CDA2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA511FDD720D005CDA2E /* GameScene.swift */; };
+		E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA531FDD720D005CDA2E /* GameViewController.swift */; };
+		E3FADA571FDD720D005CDA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA551FDD720D005CDA2E /* Main.storyboard */; };
+		E3FADA591FDD720D005CDA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA581FDD720D005CDA2E /* Assets.xcassets */; };
+		E3FADA5C1FDD720D005CDA2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA5A1FDD720D005CDA2E /* LaunchScreen.storyboard */; };
+		E3FADA671FDD720E005CDA2E /* Kataru_EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA661FDD720E005CDA2E /* Kataru_EngineTests.swift */; };
+		E3FADA721FDD720E005CDA2E /* Kataru_EngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA711FDD720E005CDA2E /* Kataru_EngineUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3FADA631FDD720E005CDA2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3FADA401FDD720D005CDA2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3FADA471FDD720D005CDA2E;
+			remoteInfo = "Kataru Engine";
+		};
+		E3FADA6E1FDD720E005CDA2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3FADA401FDD720D005CDA2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3FADA471FDD720D005CDA2E;
+			remoteInfo = "Kataru Engine";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E3FADA481FDD720D005CDA2E /* Kataru Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kataru Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3FADA4D1FDD720D005CDA2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E3FADA4F1FDD720D005CDA2E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		E3FADA511FDD720D005CDA2E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E3FADA531FDD720D005CDA2E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E3FADA561FDD720D005CDA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3FADA581FDD720D005CDA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3FADA5B1FDD720D005CDA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3FADA5D1FDD720D005CDA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3FADA621FDD720E005CDA2E /* Kataru EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kataru EngineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3FADA661FDD720E005CDA2E /* Kataru_EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kataru_EngineTests.swift; sourceTree = "<group>"; };
+		E3FADA681FDD720E005CDA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3FADA6D1FDD720E005CDA2E /* Kataru EngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kataru EngineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3FADA711FDD720E005CDA2E /* Kataru_EngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kataru_EngineUITests.swift; sourceTree = "<group>"; };
+		E3FADA731FDD720E005CDA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3FADA451FDD720D005CDA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA5F1FDD720E005CDA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA6A1FDD720E005CDA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3FADA3F1FDD720D005CDA2E = {
+			isa = PBXGroup;
+			children = (
+				E3FADA4A1FDD720D005CDA2E /* Kataru Engine */,
+				E3FADA651FDD720E005CDA2E /* Kataru EngineTests */,
+				E3FADA701FDD720E005CDA2E /* Kataru EngineUITests */,
+				E3FADA491FDD720D005CDA2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3FADA491FDD720D005CDA2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3FADA481FDD720D005CDA2E /* Kataru Engine.app */,
+				E3FADA621FDD720E005CDA2E /* Kataru EngineTests.xctest */,
+				E3FADA6D1FDD720E005CDA2E /* Kataru EngineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3FADA4A1FDD720D005CDA2E /* Kataru Engine */ = {
+			isa = PBXGroup;
+			children = (
+				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
+				E3FADA4D1FDD720D005CDA2E /* GameScene.sks */,
+				E3FADA4F1FDD720D005CDA2E /* Actions.sks */,
+				E3FADA511FDD720D005CDA2E /* GameScene.swift */,
+				E3FADA531FDD720D005CDA2E /* GameViewController.swift */,
+				E3FADA551FDD720D005CDA2E /* Main.storyboard */,
+				E3FADA581FDD720D005CDA2E /* Assets.xcassets */,
+				E3FADA5A1FDD720D005CDA2E /* LaunchScreen.storyboard */,
+				E3FADA5D1FDD720D005CDA2E /* Info.plist */,
+			);
+			path = "Kataru Engine";
+			sourceTree = "<group>";
+		};
+		E3FADA651FDD720E005CDA2E /* Kataru EngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3FADA661FDD720E005CDA2E /* Kataru_EngineTests.swift */,
+				E3FADA681FDD720E005CDA2E /* Info.plist */,
+			);
+			path = "Kataru EngineTests";
+			sourceTree = "<group>";
+		};
+		E3FADA701FDD720E005CDA2E /* Kataru EngineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E3FADA711FDD720E005CDA2E /* Kataru_EngineUITests.swift */,
+				E3FADA731FDD720E005CDA2E /* Info.plist */,
+			);
+			path = "Kataru EngineUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3FADA471FDD720D005CDA2E /* Kataru Engine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3FADA761FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru Engine" */;
+			buildPhases = (
+				E3FADA441FDD720D005CDA2E /* Sources */,
+				E3FADA451FDD720D005CDA2E /* Frameworks */,
+				E3FADA461FDD720D005CDA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kataru Engine";
+			productName = "Kataru Engine";
+			productReference = E3FADA481FDD720D005CDA2E /* Kataru Engine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3FADA611FDD720E005CDA2E /* Kataru EngineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3FADA791FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru EngineTests" */;
+			buildPhases = (
+				E3FADA5E1FDD720E005CDA2E /* Sources */,
+				E3FADA5F1FDD720E005CDA2E /* Frameworks */,
+				E3FADA601FDD720E005CDA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3FADA641FDD720E005CDA2E /* PBXTargetDependency */,
+			);
+			name = "Kataru EngineTests";
+			productName = "Kataru EngineTests";
+			productReference = E3FADA621FDD720E005CDA2E /* Kataru EngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E3FADA6C1FDD720E005CDA2E /* Kataru EngineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3FADA7C1FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru EngineUITests" */;
+			buildPhases = (
+				E3FADA691FDD720E005CDA2E /* Sources */,
+				E3FADA6A1FDD720E005CDA2E /* Frameworks */,
+				E3FADA6B1FDD720E005CDA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3FADA6F1FDD720E005CDA2E /* PBXTargetDependency */,
+			);
+			name = "Kataru EngineUITests";
+			productName = "Kataru EngineUITests";
+			productReference = E3FADA6D1FDD720E005CDA2E /* Kataru EngineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3FADA401FDD720D005CDA2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Takemaki Studios";
+				TargetAttributes = {
+					E3FADA471FDD720D005CDA2E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					E3FADA611FDD720E005CDA2E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3FADA471FDD720D005CDA2E;
+					};
+					E3FADA6C1FDD720E005CDA2E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3FADA471FDD720D005CDA2E;
+					};
+				};
+			};
+			buildConfigurationList = E3FADA431FDD720D005CDA2E /* Build configuration list for PBXProject "Kataru Engine" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3FADA3F1FDD720D005CDA2E;
+			productRefGroup = E3FADA491FDD720D005CDA2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3FADA471FDD720D005CDA2E /* Kataru Engine */,
+				E3FADA611FDD720E005CDA2E /* Kataru EngineTests */,
+				E3FADA6C1FDD720E005CDA2E /* Kataru EngineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3FADA461FDD720D005CDA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FADA571FDD720D005CDA2E /* Main.storyboard in Resources */,
+				E3FADA4E1FDD720D005CDA2E /* GameScene.sks in Resources */,
+				E3FADA591FDD720D005CDA2E /* Assets.xcassets in Resources */,
+				E3FADA5C1FDD720D005CDA2E /* LaunchScreen.storyboard in Resources */,
+				E3FADA501FDD720D005CDA2E /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA601FDD720E005CDA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA6B1FDD720E005CDA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3FADA441FDD720D005CDA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FADA521FDD720D005CDA2E /* GameScene.swift in Sources */,
+				E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */,
+				E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA5E1FDD720E005CDA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FADA671FDD720E005CDA2E /* Kataru_EngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3FADA691FDD720E005CDA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FADA721FDD720E005CDA2E /* Kataru_EngineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3FADA641FDD720E005CDA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3FADA471FDD720D005CDA2E /* Kataru Engine */;
+			targetProxy = E3FADA631FDD720E005CDA2E /* PBXContainerItemProxy */;
+		};
+		E3FADA6F1FDD720E005CDA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3FADA471FDD720D005CDA2E /* Kataru Engine */;
+			targetProxy = E3FADA6E1FDD720E005CDA2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3FADA551FDD720D005CDA2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3FADA561FDD720D005CDA2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3FADA5A1FDD720D005CDA2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3FADA5B1FDD720D005CDA2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3FADA741FDD720E005CDA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3FADA751FDD720E005CDA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3FADA771FDD720E005CDA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru Engine/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-Engine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3FADA781FDD720E005CDA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru Engine/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-Engine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3FADA7A1FDD720E005CDA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru EngineTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-EngineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kataru Engine.app/Kataru Engine";
+			};
+			name = Debug;
+		};
+		E3FADA7B1FDD720E005CDA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru EngineTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-EngineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kataru Engine.app/Kataru Engine";
+			};
+			name = Release;
+		};
+		E3FADA7D1FDD720E005CDA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru EngineUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-EngineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kataru Engine";
+			};
+			name = Debug;
+		};
+		E3FADA7E1FDD720E005CDA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG6R82MC6B;
+				INFOPLIST_FILE = "Kataru EngineUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-EngineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kataru Engine";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3FADA431FDD720D005CDA2E /* Build configuration list for PBXProject "Kataru Engine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3FADA741FDD720E005CDA2E /* Debug */,
+				E3FADA751FDD720E005CDA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3FADA761FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru Engine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3FADA771FDD720E005CDA2E /* Debug */,
+				E3FADA781FDD720E005CDA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3FADA791FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru EngineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3FADA7A1FDD720E005CDA2E /* Debug */,
+				E3FADA7B1FDD720E005CDA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3FADA7C1FDD720E005CDA2E /* Build configuration list for PBXNativeTarget "Kataru EngineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3FADA7D1FDD720E005CDA2E /* Debug */,
+				E3FADA7E1FDD720E005CDA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3FADA401FDD720D005CDA2E /* Project object */;
+}
