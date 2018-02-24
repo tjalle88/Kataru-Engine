@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3077AAA1FF2840000F9B868 /* neko.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3077AA91FF2840000F9B868 /* neko.wav */; };
+		E31B62892028F93300DCD56C /* TestWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = E31B62882028F93300DCD56C /* TestWorld.sks */; };
+		E35234D62028DE2E00371140 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = E35234D42028DE2E00371140 /* Tiles.sks */; };
+		E35234D72028DE2E00371140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35234D52028DE2E00371140 /* Assets.xcassets */; };
+		E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3899C95200FE3BE0091DB7A /* MainMenu.swift */; };
+		E3899C982017CA8A0091DB7A /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3899C972017CA8A0091DB7A /* select.wav */; };
 		E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */; };
-		E3FADA4E1FDD720D005CDA2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA4D1FDD720D005CDA2E /* GameScene.sks */; };
-		E3FADA501FDD720D005CDA2E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA4F1FDD720D005CDA2E /* Actions.sks */; };
-		E3FADA521FDD720D005CDA2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA511FDD720D005CDA2E /* GameScene.swift */; };
+		E3FADA521FDD720D005CDA2E /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA511FDD720D005CDA2E /* TitleScene.swift */; };
 		E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA531FDD720D005CDA2E /* GameViewController.swift */; };
 		E3FADA571FDD720D005CDA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA551FDD720D005CDA2E /* Main.storyboard */; };
 		E3FADA591FDD720D005CDA2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA581FDD720D005CDA2E /* Assets.xcassets */; };
 		E3FADA5C1FDD720D005CDA2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA5A1FDD720D005CDA2E /* LaunchScreen.storyboard */; };
 		E3FADA671FDD720E005CDA2E /* Kataru_EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA661FDD720E005CDA2E /* Kataru_EngineTests.swift */; };
 		E3FADA721FDD720E005CDA2E /* Kataru_EngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA711FDD720E005CDA2E /* Kataru_EngineUITests.swift */; };
+		E3FADA831FDD727D005CDA2E /* KEAudioModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA7F1FDD727C005CDA2E /* KEAudioModule.swift */; };
+		E3FADA841FDD727D005CDA2E /* BGM.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA801FDD727C005CDA2E /* BGM.strings */; };
+		E3FADA851FDD727D005CDA2E /* KEAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA811FDD727D005CDA2E /* KEAudioPlayer.swift */; };
+		E3FADA861FDD727D005CDA2E /* SoundEffects.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3FADA821FDD727D005CDA2E /* SoundEffects.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E3077AA91FF2840000F9B868 /* neko.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = neko.wav; sourceTree = SOURCE_ROOT; };
+		E31B62882028F93300DCD56C /* TestWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestWorld.sks; sourceTree = "<group>"; };
+		E35234D42028DE2E00371140 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
+		E35234D52028DE2E00371140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3899C95200FE3BE0091DB7A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		E3899C972017CA8A0091DB7A /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		E3FADA481FDD720D005CDA2E /* Kataru Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kataru Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3FADA4D1FDD720D005CDA2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E3FADA4F1FDD720D005CDA2E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		E3FADA511FDD720D005CDA2E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E3FADA511FDD720D005CDA2E /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		E3FADA531FDD720D005CDA2E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E3FADA561FDD720D005CDA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3FADA581FDD720D005CDA2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +65,10 @@
 		E3FADA6D1FDD720E005CDA2E /* Kataru EngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kataru EngineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FADA711FDD720E005CDA2E /* Kataru_EngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kataru_EngineUITests.swift; sourceTree = "<group>"; };
 		E3FADA731FDD720E005CDA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3FADA7F1FDD727C005CDA2E /* KEAudioModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEAudioModule.swift; sourceTree = "<group>"; };
+		E3FADA801FDD727C005CDA2E /* BGM.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = BGM.strings; sourceTree = "<group>"; };
+		E3FADA811FDD727D005CDA2E /* KEAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEAudioPlayer.swift; sourceTree = "<group>"; };
+		E3FADA821FDD727D005CDA2E /* SoundEffects.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = SoundEffects.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E31B62872028F90F00DCD56C /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				E31B62882028F93300DCD56C /* TestWorld.sks */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		E3FADA3F1FDD720D005CDA2E = {
 			isa = PBXGroup;
 			children = (
+				E35234D42028DE2E00371140 /* Tiles.sks */,
+				E35234D52028DE2E00371140 /* Assets.xcassets */,
 				E3FADA4A1FDD720D005CDA2E /* Kataru Engine */,
 				E3FADA651FDD720E005CDA2E /* Kataru EngineTests */,
 				E3FADA701FDD720E005CDA2E /* Kataru EngineUITests */,
@@ -103,10 +129,11 @@
 		E3FADA4A1FDD720D005CDA2E /* Kataru Engine */ = {
 			isa = PBXGroup;
 			children = (
+				E31B62872028F90F00DCD56C /* Maps */,
+				E3FADA871FDD73A1005CDA2E /* Sound Module */,
 				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
-				E3FADA4D1FDD720D005CDA2E /* GameScene.sks */,
-				E3FADA4F1FDD720D005CDA2E /* Actions.sks */,
-				E3FADA511FDD720D005CDA2E /* GameScene.swift */,
+				E3FADA511FDD720D005CDA2E /* TitleScene.swift */,
+				E3899C95200FE3BE0091DB7A /* MainMenu.swift */,
 				E3FADA531FDD720D005CDA2E /* GameViewController.swift */,
 				E3FADA551FDD720D005CDA2E /* Main.storyboard */,
 				E3FADA581FDD720D005CDA2E /* Assets.xcassets */,
@@ -132,6 +159,19 @@
 				E3FADA731FDD720E005CDA2E /* Info.plist */,
 			);
 			path = "Kataru EngineUITests";
+			sourceTree = "<group>";
+		};
+		E3FADA871FDD73A1005CDA2E /* Sound Module */ = {
+			isa = PBXGroup;
+			children = (
+				E3FADA801FDD727C005CDA2E /* BGM.strings */,
+				E3FADA811FDD727D005CDA2E /* KEAudioPlayer.swift */,
+				E3FADA7F1FDD727C005CDA2E /* KEAudioModule.swift */,
+				E3FADA821FDD727D005CDA2E /* SoundEffects.strings */,
+				E3077AA91FF2840000F9B868 /* neko.wav */,
+				E3899C972017CA8A0091DB7A /* select.wav */,
+			);
+			path = "Sound Module";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +281,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3899C982017CA8A0091DB7A /* select.wav in Resources */,
+				E35234D62028DE2E00371140 /* Tiles.sks in Resources */,
 				E3FADA571FDD720D005CDA2E /* Main.storyboard in Resources */,
-				E3FADA4E1FDD720D005CDA2E /* GameScene.sks in Resources */,
 				E3FADA591FDD720D005CDA2E /* Assets.xcassets in Resources */,
+				E3FADA841FDD727D005CDA2E /* BGM.strings in Resources */,
+				E3077AAA1FF2840000F9B868 /* neko.wav in Resources */,
+				E31B62892028F93300DCD56C /* TestWorld.sks in Resources */,
 				E3FADA5C1FDD720D005CDA2E /* LaunchScreen.storyboard in Resources */,
-				E3FADA501FDD720D005CDA2E /* Actions.sks in Resources */,
+				E35234D72028DE2E00371140 /* Assets.xcassets in Resources */,
+				E3FADA861FDD727D005CDA2E /* SoundEffects.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +315,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3FADA521FDD720D005CDA2E /* GameScene.swift in Sources */,
+				E3FADA521FDD720D005CDA2E /* TitleScene.swift in Sources */,
+				E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */,
+				E3FADA851FDD727D005CDA2E /* KEAudioPlayer.swift in Sources */,
+				E3FADA831FDD727D005CDA2E /* KEAudioModule.swift in Sources */,
 				E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */,
 				E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */,
 			);
@@ -441,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GG6R82MC6B;
 				INFOPLIST_FILE = "Kataru Engine/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-Engine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,6 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GG6R82MC6B;
 				INFOPLIST_FILE = "Kataru Engine/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Takemaki-Studios.Kataru-Engine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
