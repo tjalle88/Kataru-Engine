@@ -8,8 +8,14 @@
 
 import UIKit
 
-var titleFont: String?
-var gameTitle: String?
+struct SKGameSettings {
+	var titleFont: String = "MarkerFelt-Thin"
+	var defaultFont: String = "Helvetica Neue"
+	var defaultFontSize: CGFloat = 11
+	var gameTitle: String = "Game!"
+}
+
+var gameSettings = SKGameSettings()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-		titleFont = "MarkerFelt-Thin"
-		gameTitle = "Game!"
         return true
     }
 

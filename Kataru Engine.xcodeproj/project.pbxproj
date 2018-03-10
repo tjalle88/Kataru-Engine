@@ -13,6 +13,10 @@
 		E35234D72028DE2E00371140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35234D52028DE2E00371140 /* Assets.xcassets */; };
 		E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3899C95200FE3BE0091DB7A /* MainMenu.swift */; };
 		E3899C982017CA8A0091DB7A /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3899C972017CA8A0091DB7A /* select.wav */; };
+		E3F223102044932F00D4FB60 /* KEScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2230F2044932F00D4FB60 /* KEScene.swift */; };
+		E3F22313204493E800D4FB60 /* KEDialogCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */; };
+		E3F2231520449E6E00D4FB60 /* KEGeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2231420449E6E00D4FB60 /* KEGeneralFunctions.swift */; };
+		E3F223172044A82700D4FB60 /* KEDialogOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F223162044A82700D4FB60 /* KEDialogOptions.swift */; };
 		E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */; };
 		E3FADA521FDD720D005CDA2E /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA511FDD720D005CDA2E /* TitleScene.swift */; };
 		E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FADA531FDD720D005CDA2E /* GameViewController.swift */; };
@@ -51,6 +55,10 @@
 		E35234D52028DE2E00371140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3899C95200FE3BE0091DB7A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		E3899C972017CA8A0091DB7A /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
+		E3F2230F2044932F00D4FB60 /* KEScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEScene.swift; sourceTree = "<group>"; };
+		E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogCharacter.swift; sourceTree = "<group>"; };
+		E3F2231420449E6E00D4FB60 /* KEGeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEGeneralFunctions.swift; sourceTree = "<group>"; };
+		E3F223162044A82700D4FB60 /* KEDialogOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogOptions.swift; sourceTree = "<group>"; };
 		E3FADA481FDD720D005CDA2E /* Kataru Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kataru Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3FADA511FDD720D005CDA2E /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
@@ -104,6 +112,24 @@
 			path = Maps;
 			sourceTree = "<group>";
 		};
+		E3F2230C204491E000D4FB60 /* Graphics&UI */ = {
+			isa = PBXGroup;
+			children = (
+				E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */,
+				E3F2230F2044932F00D4FB60 /* KEScene.swift */,
+				E3F223162044A82700D4FB60 /* KEDialogOptions.swift */,
+			);
+			path = "Graphics&UI";
+			sourceTree = "<group>";
+		};
+		E3F22311204493B500D4FB60 /* Extra mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				E3F2231420449E6E00D4FB60 /* KEGeneralFunctions.swift */,
+			);
+			path = "Extra mechanics";
+			sourceTree = "<group>";
+		};
 		E3FADA3F1FDD720D005CDA2E = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +155,8 @@
 		E3FADA4A1FDD720D005CDA2E /* Kataru Engine */ = {
 			isa = PBXGroup;
 			children = (
+				E3F22311204493B500D4FB60 /* Extra mechanics */,
+				E3F2230C204491E000D4FB60 /* Graphics&UI */,
 				E31B62872028F90F00DCD56C /* Maps */,
 				E3FADA871FDD73A1005CDA2E /* Sound Module */,
 				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
@@ -315,12 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F2231520449E6E00D4FB60 /* KEGeneralFunctions.swift in Sources */,
+				E3F223172044A82700D4FB60 /* KEDialogOptions.swift in Sources */,
 				E3FADA521FDD720D005CDA2E /* TitleScene.swift in Sources */,
 				E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */,
 				E3FADA851FDD727D005CDA2E /* KEAudioPlayer.swift in Sources */,
 				E3FADA831FDD727D005CDA2E /* KEAudioModule.swift in Sources */,
+				E3F223102044932F00D4FB60 /* KEScene.swift in Sources */,
 				E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */,
 				E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */,
+				E3F22313204493E800D4FB60 /* KEDialogCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
