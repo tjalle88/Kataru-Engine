@@ -14,7 +14,7 @@ class TitleScene: SKScene {
 	//Background for the company logo
 	let backgroundNode = SKSpriteNode(imageNamed: "TakemakiBackground")
 	let logoNode = SKSpriteNode(imageNamed: "TakemakiLogo")
-	let companyNode = SKLabelNode(fontNamed: titleFont!)
+	let companyNode = SKLabelNode(fontNamed: gameSettings.titleFont)
 	let soundModule = KEAudioModule(numberOfSoundPlayers: 5)
 
 	

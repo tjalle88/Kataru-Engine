@@ -80,22 +80,31 @@ class KEDialogCharacter {
 		//SetFont
 		var fontSizeValue: CGFloat
 		
-		if fontName == "default" || fontName == "Default" {
-			fontStyle = UIFont(name: gameSettings.defaultFont!, size: gameSettings.defaultFontSize!)
+//        if default font is requested, it will simply be created using the information in game settings.
+        createFont: if fontName == "default" || fontName == "Default" {
+            fontStyle = UIFont(name: gameSettings.defaultFont, size: gameSettings.defaultFontSize)!
+            
 		} else {
+            
+//            Every time a step in the font creation proccess fails, the program will use the default font, as specified by game settings instead.
 			
-            guard let fontSizeDubleValue = Double(fontSize) {
-//                make ui font here
-            } else {
-                fontStyle = UIFont(name: gameSettings.defaultFont, size: gameSettings.defaultFontSize)
+//            first convert the given string to a double
+            guard let fontSizeDubleValue = Double(fontSize) else {
+                fontStyle = UIFont(name: gameSettings.defaultFont, size: gameSettings.defaultFontSize)!
+                break createFont
             }
             
-			do {
-				try fontSizeValue = CGFloat(fontSize)
-				try fontStyle = UIFont(name: fontName, size: fontSizeValue)
-			}catch {
-				fontStyle = UIFont(name: gameSettings.defaultFont, size: gameSettings.defaultFontSize)
-			}
+//            convert the double to a CGFloat
+            fontSizeValue = CGFloat(fontSizeDubleValue)
+            
+//            finally use the cgfloat and given font name to create a font. If this fails, create the system standard font.
+            guard let tempFontStyle = UIFont(name: fontName, size: fontSizeValue) else {
+                fontStyle = UIFont(name: gameSettings.defaultFont, size: gameSettings.defaultFontSize)!
+                break createFont
+            }
+            
+//            if all hurdles are cleared, assign the fontstyle to the fontstyle variable.
+            fontStyle = tempFontStyle
 			
 		}
 		
