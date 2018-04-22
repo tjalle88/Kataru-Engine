@@ -10,28 +10,44 @@ import SpriteKit
 
 class KEDialogCharacter {
 	
-	//Every portrait corresponds to a mood. A portrait is represented by the resourse name
-	//of the image file.
+	///Every portrait corresponds to a mood. The portrait name file is represented by a resource name.
 	var portraits: [String: String]
 	
-	//A character can have a specific text color.
+	///A character can have a specific text color.
 	let textColor: SKColor
 	
-	//Special font style for the character
+	///Special font style for the character
 	let fontStyle: UIFont
 	
+	///The name of the character
+	let characterName: String
 	
-	init(colorOfText: String = "1,1,1,1", fontName: String = "default", fontSize: String = "11", portraitData: String = "") {
+	/**
+	* Default name is blank.
+	* Default color is white (1,1,1,1).
+	* Default font is the game settings default font ("Default").
+	* Default font size is 18.
+	* Default Portrait is blank.
+	
+	- parameter nameOfCharacter: The name that will be shown above the character‘s dialog boxes
+	- parameter colorOfText: The color that the dialog text of the character will have. RGB string with format #,#,#,#. Last # is opacity. Values go from 0.0 to 1.0
+	- parameter fontName: The name of the font to be used with the characters dialog. Refer to iOS system fonts to see wich ones are available.
+	- parameter portraitData: expression:image */
+	init(nameOfCharacter: String = "", colorOfText: String = "1,1,1,1", fontName: String = "default", fontSize: String = "18", portraitData: String = "") {
+		
+		//Set the name of the character mto be displayed in the dialog box
+		characterName = nameOfCharacter
 		
 		var splitChar: Character
 		
 		//Parse portraits
+        portraits = [String: String]()
+        
 		if portraitData != "" {
 			
 			splitChar = ","
 			let splitPD = portraitData.split(separator: splitChar)
 			var keyValuePair: [Substring]
-			portraits = [String: String]()
 			splitChar = ":"
 			
 			for portrait in splitPD {
@@ -41,7 +57,7 @@ class KEDialogCharacter {
 				
 			}
 			
-		}
+        }
 		
 		//Set text color
 		splitChar = ","

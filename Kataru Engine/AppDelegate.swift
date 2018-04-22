@@ -13,9 +13,14 @@ struct SKGameSettings {
 	var defaultFont: String = "Helvetica Neue"
 	var defaultFontSize: CGFloat = 11
 	var gameTitle: String = "Game!"
+	var textAnimationDelayInSeconds: Double = 0.2
+	var testBool: Bool = false
+	var testCounter: Int = 1
 }
 
 var gameSettings = SKGameSettings()
+///The sound module of the game
+let soundModule = KEAudioModule(numberOfSoundPlayers: 5)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -18,7 +18,7 @@ class MainMenu: SKScene {
 	
 	//Background for the main menu
 	let backgroundNode = SKSpriteNode(imageNamed: "MainMenuBackground")
-	let titleNode = SKLabelNode(fontNamed: titleFont!)
+	let titleNode = SKLabelNode(fontNamed: gameSettings.titleFont)
 	let soundModule = KEAudioModule(numberOfSoundPlayers: 5)
 	let menuItems: [String] = [MainMenuItem.startGame.rawValue, MainMenuItem.continueGame.rawValue]
 	
@@ -39,7 +39,7 @@ class MainMenu: SKScene {
 		
 		//Add game title
 		titleNode.position = CGPoint(x: size.width/2.0, y: size.height*3/4)
-		titleNode.text = gameTitle!
+		titleNode.text = gameSettings.gameTitle
 		
 		var tempLabel: SKLabelNode
 		var counter: Int = 0
@@ -48,7 +48,7 @@ class MainMenu: SKScene {
 		
 		for item in menuItems {
 			
-			tempLabel = SKLabelNode(fontNamed: titleFont!)
+			tempLabel = SKLabelNode(fontNamed: gameSettings.titleFont)
 			tempLabel.text = item
 			name = "lbl" + item
 			tempLabel.name = name
@@ -101,7 +101,12 @@ class MainMenu: SKScene {
 	}
 	
 	func newGame() {
-		soundModule.playSoundEffect(effectName: "Neko")
+		
+		var characters = [String : KEDialogCharacter]()
+		characters["カッレ"] = KEDialogCharacter(nameOfCharacter: "カッレ", colorOfText: "0.0,0.8,0.0,1.0", fontName: gameSettings.defaultFont, fontSize: "24", portraitData: "smile:testSmile,frown:testFrown")
+		
+        let scene = KEScene(size: self.size, dictOfCharacters: characters)
+		self.view!.presentScene(scene, transition: SKTransition.fade(withDuration: 1))
 	}
 	
 	func continueGame() {
