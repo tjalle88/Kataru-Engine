@@ -14,6 +14,8 @@ class KEScene: SKScene {
     var dialogCharacters: [String: KEDialogCharacter]
 	///When the scene is in dialog mode, touches began will go to the next textbox page
 	var dialogMode: Bool = false
+	///Handles dialog text
+	var lblDialogText: KEAnimatedDialogLabelNode?
 	
 	/**
 	Shows a box with dialog
@@ -55,12 +57,15 @@ class KEScene: SKScene {
 			
 		}
 		
-        let lblDialogText = KEAnimatedDialogLabelNode(fontNamed: dialogCharacters[characterName]!.fontStyle.fontName)
-        lblDialogText.fontSize = dialogCharacters[characterName]!.fontStyle.pointSize
-		let margin = lblDialogText.fontSize * 2
-		lblDialogText.fontColor = dialogCharacters[characterName]!.textColor
+		lblDialogText = KEAnimatedDialogLabelNode(fontName: dialogCharacters[characterName]!.fontStyle.fontName, fontSize: dialogCharacters[characterName]!.fontStyle.pointSize, fontColor: dialogCharacters[characterName]!.textColor)
 		
-		let boxShape = KEDialogShapeNode(rectOf: boxSize)
+		if lblDialogText == nil {
+			return
+		}
+		
+        lblDialogText!.fontSize = dialogCharacters[characterName]!.fontStyle.pointSize
+		let margin = lblDialogText!.fontSize * 2
+		let boxShape = KEDialogShapeNode(rectOf: boxSize) 
 		boxShape.position = CGPoint(x: boxWidth/2, y: boxHeight/2)
 		boxShape.strokeColor = SKColor.gray
 		boxShape.fillColor = SKColor.gray
@@ -83,14 +88,17 @@ class KEScene: SKScene {
 		}
 		
         //Set dialog text location
-		lblDialogText.position = CGPoint(x: lblDialogText.fontSize * 2, y: boxHeight - lblDialogText.fontSize * 2)
-		lblDialogText.text = ""
-		lblDialogText.horizontalAlignmentMode = .left
+		lblDialogText!.position = CGPoint(x: lblDialogText!.fontSize * 2, y: boxHeight - lblDialogText!.fontSize * 2)
 			
 		addChild(boxShape)
-        addChild(lblDialogText)
 		
-		lblDialogText.set(stringToAnimate: dialog, maxSize: CGSize(width: boxSize.width - margin * 2, height: boxSize.height - margin * 2), animationDelay: 100000)
+		for node in lblDialogText!.getChildren() {
+			
+			addChild(node)
+			
+		}
+		
+		lblDialogText!.set(stringToAnimate: dialog, maxSize: CGSize(width: boxSize.width - margin * 2, height: boxSize.height - margin * 2), animationDelay: 100000)
 		
     }
 	
@@ -131,7 +139,7 @@ class KEScene: SKScene {
 		
 		for node in children {
 			
-			if node is KEDialogSpriteNode || node is KEDialogLabelNode || node is KEAnimatedDialogLabelNode || node is KEDialogShapeNode {
+			if node is KEDialogSpriteNode || node is KEDialogLabelNode || node is KEDialogShapeNode {
 				
 				node.removeFromParent()
 			}
@@ -143,16 +151,10 @@ class KEScene: SKScene {
 	override func update(_ currentTime: TimeInterval) {
 		super.update(currentTime)
 		
-		for node in self.children {
+		if lblDialogText != nil {
 			
-			if let animatedLabel = node as? KEAnimatedDialogLabelNode {
-				
-				if animatedLabel.awaitingAnimationStart {
-				
-					startAnimation(animatedLabel: animatedLabel)
-					
-				}
-				
+			if lblDialogText!.awaitingAnimationStart {
+				startAnimation(animatedLabel: lblDialogText!)
 			}
 			
 		}
@@ -160,32 +162,12 @@ class KEScene: SKScene {
 	}
 	
 	func startAnimation(animatedLabel: KEAnimatedDialogLabelNode) {
-		
-		
 
 		animatedLabel.awaitingAnimationStart = false
+		animatedLabel.startAnimation()
 		
 	}
 	
-	func queueLetter(animatedLabel: KEAnimatedDialogLabelNode, letterToAdd: String, delay: UInt32) {
-		
-		DispatchQueue.global(qos: .userInitiated).async {
-		
-			usleep(delay)
-		
-			DispatchQueue.main.async {
-				animatedLabel.text = animatedLabel.text! + letterToAdd
-			
-				//Do not make "Voice" sound when printing spaces.
-				if letterToAdd != " " {
-					self.soundModule.playSoundEffect(effectName: "voice")
-				}
-			
-			}
-			
-		}
-		
-	}
 	
 	func resetTextBox(animatedLabel: KEAnimatedDialogLabelNode, delay: UInt32) {
 		
@@ -194,7 +176,7 @@ class KEScene: SKScene {
 			usleep(delay)
 			
 			DispatchQueue.main.async {
-				animatedLabel.text = ""
+				animatedLabel.reset()
 			}
 			
 		}

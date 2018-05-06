@@ -11,18 +11,36 @@ import SpriteKit
 class KEAnimatedDialogLabelNode {
 	
 	///The strings in the embedded arrays represent rows in one textbox. Each embedded array itself is a new textbox
-	var animatedText: [[String]] = [[""]]
-	var boxCounter: Int = 0
+	fileprivate var animatedText: [[String]] = [[""]]
+	var boxCounter: Int = 0 
 	var awaitingAnimationStart: Bool = false
 	var delayBetweenLetters = 0
 	///Contains each row of the textlabel
-	var textLabelInstances = [SKLabelNode]()
+	fileprivate var textLabelInstances = [SKLabelNode]()
 	var fontName: String = gameSettings.defaultFont
 	var fontSize: CGFloat = gameSettings.defaultFontSize
+	var fontColor: SKColor
 	var isAnimating: Bool = false
 	var position = CGPoint(x: 0, y: 0)
+	var horozontalAlignmentMode: SKLabelHorizontalAlignmentMode = .left
+	fileprivate var textHeight: CGFloat = 0
 	
-	/**Schedules the appearence of the letters in a textbox*/
+	init(fontName fn: String, fontSize fz: CGFloat, fontColor fc: SKColor) {
+		fontSize = fz
+		fontName = fn
+		fontColor = fc
+	}
+	
+	/**
+	Returns references to SKLabelNodes so that they can be added to a scene
+	*/
+	func getChildren() -> [SKLabelNode] {
+		
+		return textLabelInstances
+		
+	}
+	
+	/**Schedules the appearence of the letters in a textbox**/
 	func startAnimation() {
 		
 		isAnimating = true
@@ -31,6 +49,20 @@ class KEAnimatedDialogLabelNode {
 		
 		let delayChart = getLetterDelayChart(forBox: boxCounter)
 		
+		//populate text label instances
+		textLabelInstances.removeAll()
+		
+		var tempNodeReference: SKLabelNode
+		var tempPosition: CGPoint = CGPoint(x: position.x, y: position.y)
+		
+		for _ in  delayChart {
+			tempNodeReference = SKLabelNode()
+			tempNodeReference.position = tempPosition
+			textLabelInstances.append(tempNodeReference)
+			tempPosition = CGPoint(x: tempPosition.x, y: tempPosition.y - textHeight)
+		}
+		
+		//Queue up letters to animate in each row
 		for row in delayChart {
 			
 			for letter in row.keys {
@@ -56,7 +88,7 @@ class KEAnimatedDialogLabelNode {
 			
 				DispatchQueue.main.async {
 				
-					guard self.textLabelInstances[row].text != nil else {
+					if self.textLabelInstances[row].text == nil {
 						self.textLabelInstances[row].text = ""
 					}
 					
@@ -75,7 +107,7 @@ class KEAnimatedDialogLabelNode {
 		
 	}
 	
-	/** The letter delay chart shows the delay for each letter in a textbox to appeare */
+	/** The letter delay chart shows the delay for each letter in a textbox to appear */
 	func getLetterDelayChart(forBox nr: Int) -> [[String:UInt32]] {
 		
 		var delayChart = [[String:UInt32]]()
@@ -134,9 +166,9 @@ class KEAnimatedDialogLabelNode {
 		
 		animatedText = formatTextBoxes(rows: formatedRows, maxHeight: maxSize.height)
 		
+		textHeight = stringToAnimate.sizeOfLabelNode(fontName: fontName, fontSize: fontSize).height
 		awaitingAnimationStart = true
 		boxCounter = 0
-		rowCounter = 0
 		delayBetweenLetters = animationDelay
 		
 	}
@@ -162,7 +194,7 @@ class KEAnimatedDialogLabelNode {
 				textBoxCounter += 1
 				textBoxArray.append([String]())
 				textBoxArray[textBoxCounter].append(row)
-				height = row.sizeOfLabelNode(fontName: fontName!, fontSize: fontSize).height
+				height = row.sizeOfLabelNode(fontName: fontName, fontSize: fontSize).height
 				
 				
 			}
@@ -222,7 +254,7 @@ class KEAnimatedDialogLabelNode {
 					}
 				}
 				
-				size = mutatedString.sizeOfLabelNode(fontName: self.fontName!, fontSize: self.fontSize)
+				size = mutatedString.sizeOfLabelNode(fontName: self.fontName, fontSize: self.fontSize)
 				
 			}
 			
