@@ -53,21 +53,25 @@ class KEAnimatedDialogLabelNode {
 		textLabelInstances.removeAll()
 		
 		var tempNodeReference: SKLabelNode
-		var tempPosition: CGPoint = CGPoint(x: position.x, y: position.y)
+		var tempPosition: CGPoint = CGPoint(x: position.x, y: position.y) //TODO Look here. The position may be wrong
 		
 		for _ in  delayChart {
-			tempNodeReference = SKLabelNode()
+			tempNodeReference = SKLabelNode()			//Todo: Change text to
 			tempNodeReference.position = tempPosition
 			textLabelInstances.append(tempNodeReference)
 			tempPosition = CGPoint(x: tempPosition.x, y: tempPosition.y - textHeight)
 		}
 		
 		//Queue up letters to animate in each row
+		var letter: String
+		
 		for row in delayChart {
 			
-			for letter in row.keys {
+			for time in row.keys {
 				
-				queueLetter(letterToAdd: letter, row: rowCounter, delay: delayChart[rowCounter][letter]!)
+				letter = delayChart[rowCounter][time]!
+				
+				queueLetter(letterToAdd: letter, row: rowCounter, delay: time)
 				
 			}
 			
@@ -75,7 +79,6 @@ class KEAnimatedDialogLabelNode {
 			
 		}
 
-		
 	}
 	
 	func queueLetter(letterToAdd: String, row: Int, delay: UInt32) {
@@ -108,23 +111,25 @@ class KEAnimatedDialogLabelNode {
 	}
 	
 	/** The letter delay chart shows the delay for each letter in a textbox to appear */
-	func getLetterDelayChart(forBox nr: Int) -> [[String:UInt32]] {
+	func getLetterDelayChart(forBox nr: Int) -> [[UInt32:String]] {
 		
-		var delayChart = [[String:UInt32]]()
+		var delayChart = [[UInt32:String]]()
 		var delayCounter = 0
 		var counter = 0
 		
 		for row in animatedText[nr] {
 			
+			//create dictionary for the row
+			delayChart.append([UInt32 : String]())
+			
 			for letter in row {
 				
-				delayChart[counter][String(letter)] = UInt32(delayCounter * delayBetweenLetters)
+				delayChart[counter][UInt32(delayCounter * delayBetweenLetters)] = String(letter)
 				delayCounter += 1
 				
 			}
 			
 			counter += 1
-			delayChart.append([String:UInt32]())
 			
 		}
 		
@@ -177,15 +182,19 @@ class KEAnimatedDialogLabelNode {
 	func formatTextBoxes(rows: [String], maxHeight: CGFloat) -> [[String]] {
 		
 		var textBoxArray = [[String]]()
+		textBoxArray.append([String()])
 		var height: CGFloat = 0
 		var textBoxCounter: Int = 0
+		var rowHeight: CGFloat
 		
 		for row in rows {
 			
+			rowHeight = row.sizeOfLabelNode(fontName: fontName, fontSize: fontSize).height
+			
 			//If height will fit within textbox
-			if height + row.sizeOfLabelNode(fontName: fontName, fontSize: fontSize).height > maxHeight {
+			if height + rowHeight < maxHeight {
 				
-				height += row.sizeOfLabelNode(fontName: fontName, fontSize: fontSize).height
+				height += rowHeight
 				textBoxArray[textBoxCounter].append(row)
 				
 			} else {
@@ -221,15 +230,16 @@ class KEAnimatedDialogLabelNode {
 		var splitString: [Substring]
 		var mutatedString: String = ""
 		var wordCounter : Int = 0
+		//let splitSeparator = Character(" ")
 		
 		//Spit string into words
-		splitString = str.split(separator: Character(" "))
+		splitString = str.split(separator: " ")
 
 		let numberOfWords = splitString.count
 		
-		if maxWidth > size.width  {
+		if maxWidth < size.width  {
 			
-			while maxWidth > size.width {
+			while maxWidth < size.width {
 				
 				mutatedString = ""
 				
@@ -267,10 +277,14 @@ class KEAnimatedDialogLabelNode {
 		var returnArray = [mutatedString]
 		var remainder = ""
 		
-		if wordCounter < splitString.count {
+		if wordCounter != 0 {
 			
-			for i in wordCounter...splitString.count-1 {
-				remainder += splitString[i]
+			if wordCounter < splitString.count {
+				
+				for i in wordCounter...splitString.count-1 {
+					remainder += splitString[i]
+				}
+				
 			}
 			
 		}

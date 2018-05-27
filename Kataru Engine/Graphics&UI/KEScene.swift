@@ -120,7 +120,7 @@ class KEScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
-		gameSettings.testCounter += 1
+		gameSettings.testCounter = 3
 		
 		cleanDialogNodes()
 		
@@ -130,6 +130,8 @@ class KEScene: SKScene {
 			ShowDialog(character: "カッレ", expression: "smile", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "今日は、タカちゃん! これはテストの為の長い文書です。この文書で、分が長すぎたら、どうなるか試します。まだテキストが足りないから、つづく。結局新しい一列が出るはずです。")
 		case 2:
 			ShowDialog(character: "カッレ", expression: "frown", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "ところで、甘いもの食べすぎたらダメだ！")
+		case 3:
+			ShowDialog(character: "Kalle", expression: "frown", style: .standard, effect: .none, dialog: "Let's take this in english")
 		default:
 			soundModule.playSoundEffect(effectName: "Neko")
 		}
@@ -162,9 +164,14 @@ class KEScene: SKScene {
 	}
 	
 	func startAnimation(animatedLabel: KEAnimatedDialogLabelNode) {
-
+		
 		animatedLabel.awaitingAnimationStart = false
 		animatedLabel.startAnimation()
+		
+		for lbl in animatedLabel.getChildren() {
+			
+			addChild(lbl)
+		}
 		
 	}
 	
