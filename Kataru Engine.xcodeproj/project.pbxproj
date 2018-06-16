@@ -14,7 +14,7 @@
 		E31B62892028F93300DCD56C /* TestWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = E31B62882028F93300DCD56C /* TestWorld.sks */; };
 		E35234D62028DE2E00371140 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = E35234D42028DE2E00371140 /* Tiles.sks */; };
 		E35234D72028DE2E00371140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35234D52028DE2E00371140 /* Assets.xcassets */; };
-		E36CBDB6205EF3B600B58C25 /* KEAnimatedDialogLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36CBDB5205EF3B600B58C25 /* KEAnimatedDialogLabelNode.swift */; };
+		E371B3A620BB3C5E00ECF808 /* KEAnimatedDialogLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E371B3A520BB3C5D00ECF808 /* KEAnimatedDialogLabelNode.swift */; };
 		E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3899C95200FE3BE0091DB7A /* MainMenu.swift */; };
 		E3899C982017CA8A0091DB7A /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3899C972017CA8A0091DB7A /* select.wav */; };
 		E39A437120712E1F00AFB9C7 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = E39A437020712E1E00AFB9C7 /* click.wav */; };
@@ -62,7 +62,7 @@
 		E31B62882028F93300DCD56C /* TestWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestWorld.sks; sourceTree = "<group>"; };
 		E35234D42028DE2E00371140 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		E35234D52028DE2E00371140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E36CBDB5205EF3B600B58C25 /* KEAnimatedDialogLabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEAnimatedDialogLabelNode.swift; sourceTree = "<group>"; };
+		E371B3A520BB3C5D00ECF808 /* KEAnimatedDialogLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEAnimatedDialogLabelNode.swift; sourceTree = "<group>"; };
 		E3899C95200FE3BE0091DB7A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		E3899C972017CA8A0091DB7A /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		E39A437020712E1E00AFB9C7 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
@@ -127,12 +127,12 @@
 		E3F2230C204491E000D4FB60 /* Graphics&UI */ = {
 			isa = PBXGroup;
 			children = (
-				E36CBDB5205EF3B600B58C25 /* KEAnimatedDialogLabelNode.swift */,
 				E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */,
 				E3F2230F2044932F00D4FB60 /* KEScene.swift */,
 				E30E1AD7207A6717001FE029 /* KEDialogShapeNode.swift */,
 				E3F223162044A82700D4FB60 /* KEDialogOptions.swift */,
 				E30E1AD5207A4F4B001FE029 /* KEDialogLabelNode.swift */,
+				E371B3A520BB3C5D00ECF808 /* KEAnimatedDialogLabelNode.swift */,
 				E30E1AD3207A4E2E001FE029 /* KEDialogSpriteNode.swift */,
 			);
 			path = "Graphics&UI";
@@ -369,9 +369,9 @@
 				E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */,
 				E30E1AD4207A4E2E001FE029 /* KEDialogSpriteNode.swift in Sources */,
 				E3FADA851FDD727D005CDA2E /* KEAudioPlayer.swift in Sources */,
+				E371B3A620BB3C5E00ECF808 /* KEAnimatedDialogLabelNode.swift in Sources */,
 				E30E1AD6207A4F4B001FE029 /* KEDialogLabelNode.swift in Sources */,
 				E3FADA831FDD727D005CDA2E /* KEAudioModule.swift in Sources */,
-				E36CBDB6205EF3B600B58C25 /* KEAnimatedDialogLabelNode.swift in Sources */,
 				E3CCA0AE207A991800650D39 /* Extensions.swift in Sources */,
 				E3F223102044932F00D4FB60 /* KEScene.swift in Sources */,
 				E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */,

@@ -18,9 +18,9 @@ enum KEDialogStyle {
 	case standardMiddle
 	///Box with game color scheme appearing at the top of the screen
 	case standardTop
-	///Invisible box with game color scheme appearing in the middle of the screen.
+	///Invisible box appearing in the middle of the screen.
 	case framelessMiddle
-	///Invisible box with game color scheme appearing at the top of the screen
+	///Invisible box appearing at the top of the screen
 	case framelessTop
 	
 }

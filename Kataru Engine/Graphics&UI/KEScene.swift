@@ -17,6 +17,19 @@ class KEScene: SKScene {
 	///Handles dialog text
 	var lblDialogText: KEAnimatedDialogLabelNode?
 	
+	
+	//The charcters have to be prepared in an earlier step
+	init(size: CGSize, dictOfCharacters: [String : KEDialogCharacter]) {
+		
+		dialogCharacters = dictOfCharacters
+		
+		//Initiates the default dialog character, which is basically only plain text with no portrait.
+		dialogCharacters["default"] = KEDialogCharacter()
+		
+		super.init(size: size)
+		
+	}
+	
 	/**
 	Shows a box with dialog
 	
@@ -63,15 +76,13 @@ class KEScene: SKScene {
 			return
 		}
 		
-        lblDialogText!.fontSize = dialogCharacters[characterName]!.fontStyle.pointSize
 		let margin = lblDialogText!.fontSize * 2
 		let boxShape = KEDialogShapeNode(rectOf: boxSize) 
 		boxShape.position = CGPoint(x: boxWidth/2, y: boxHeight/2)
 		boxShape.strokeColor = SKColor.gray
 		boxShape.fillColor = SKColor.gray
 		boxShape.alpha = 0.5
-		
-
+		addChild(boxShape)
 		
 		//Set portrait location
 		if expression != "" && dialogCharacters.keys.contains(character) {
@@ -87,33 +98,23 @@ class KEScene: SKScene {
 			
 		}
 		
-        //Set dialog text location
-		lblDialogText!.position = CGPoint(x: lblDialogText!.fontSize * 2, y: boxHeight - lblDialogText!.fontSize * 2)
-			
-		addChild(boxShape)
-		
-		for node in lblDialogText!.getChildren() {
-			
-			addChild(node)
-			
-		}
-		
-		lblDialogText!.set(stringToAnimate: dialog, maxSize: CGSize(width: boxSize.width - margin * 2, height: boxSize.height - margin * 2), animationDelay: 100000)
+        //Set dialog text location.
+		var pos = CGPoint(x: lblDialogText!.fontSize * 2, y: boxHeight - lblDialogText!.fontSize * 2)
+		//Convert position to view coordinates. In a view Y=0 is at the top, not at the bottom like in a scene.
+		pos = convertToViewCoordinates(sceneCoordinates: pos)
+		lblDialogText!.set(stringToAnimate: dialog, characterDelay: 100000, positionOfTextBox: pos, sizeOfTextBox: CGSize(width: boxSize.width - margin * 2, height: boxSize.height - margin * 2))
 		
     }
 	
-	//The charcters have to be prepared in an earlier step
-	init(size: CGSize, dictOfCharacters: [String : KEDialogCharacter]) {
-        
-        dialogCharacters = dictOfCharacters
-        
-        //Initiates the default dialog character, which is basically only plain text with no portrait.
-        dialogCharacters["default"] = KEDialogCharacter()
-        
-        super.init(size: size)
-
-    }
-    
+	func convertToViewCoordinates(sceneCoordinates sc: CGPoint) -> CGPoint {
+		
+		let y = self.view!.bounds.height - sc.y
+		let x = sc.x
+		
+		return CGPoint(x: x, y: y)
+		
+	}
+	
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -156,34 +157,8 @@ class KEScene: SKScene {
 		if lblDialogText != nil {
 			
 			if lblDialogText!.awaitingAnimationStart {
-				startAnimation(animatedLabel: lblDialogText!)
-			}
-			
-		}
-		
-	}
-	
-	func startAnimation(animatedLabel: KEAnimatedDialogLabelNode) {
-		
-		animatedLabel.awaitingAnimationStart = false
-		animatedLabel.startAnimation()
-		
-		for lbl in animatedLabel.getChildren() {
-			
-			addChild(lbl)
-		}
-		
-	}
-	
-	
-	func resetTextBox(animatedLabel: KEAnimatedDialogLabelNode, delay: UInt32) {
-		
-		DispatchQueue.global(qos: .userInitiated).async {
-			
-			usleep(delay)
-			
-			DispatchQueue.main.async {
-				animatedLabel.reset()
+				self.view!.addSubview(lblDialogText!.textBox)
+				lblDialogText!.startAnimation()
 			}
 			
 		}

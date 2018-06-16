@@ -16,6 +16,7 @@ struct SKGameSettings {
 	var textAnimationDelayInSeconds: Double = 0.2
 	var testBool: Bool = false
 	var testCounter: Int = 1
+	var defaultFontColor: UIColor = UIColor.black
 }
 
 var gameSettings = SKGameSettings()
