@@ -103,7 +103,7 @@ class MainMenu: SKScene {
 	func newGame() {
 		
 		var characters = [String : KEDialogCharacter]()
-		characters["カッレ"] = KEDialogCharacter(nameOfCharacter: "カッレ", colorOfText: "0.0,0.8,0.0,1.0", fontName: gameSettings.defaultFont, fontSize: "24", portraitData: "smile:testSmile,frown:testFrown")
+		characters["カッレ"] = KEDialogCharacter(nameOfCharacter: "カッレ", colorOfText: "1.0,1.0,1.0,1.0", fontName: gameSettings.defaultFont, fontSize: "30", portraitData: "smile:testSmile,frown:testFrown")
 		
         let scene = KEScene(size: self.size, dictOfCharacters: characters)
 		self.view!.presentScene(scene, transition: SKTransition.fade(withDuration: 1))

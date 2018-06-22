@@ -15,7 +15,7 @@ class KEScene: SKScene {
 	///When the scene is in dialog mode, touches began will go to the next textbox page
 	var dialogMode: Bool = false
 	///Handles dialog text
-	var lblDialogText: KEAnimatedDialogLabelNode?
+	var lblDialogText: KEAnimatedDialogLabelNode
 	
 	
 	//The charcters have to be prepared in an earlier step
@@ -25,6 +25,7 @@ class KEScene: SKScene {
 		
 		//Initiates the default dialog character, which is basically only plain text with no portrait.
 		dialogCharacters["default"] = KEDialogCharacter()
+		lblDialogText = KEAnimatedDialogLabelNode()
 		
 		super.init(size: size)
 		
@@ -39,13 +40,16 @@ class KEScene: SKScene {
 	- parameter effect: Visual effect to be shown when delivering dialog. Default: none.
 	- parameter dialog: The spoken dialog.
 	*/
-    func ShowDialog(character: String, expression: String, style: KEDialogStyle, effect: KEDialogEffect, dialog: String) {
+    func showDialog(character: String, expression: String, style: KEDialogStyle, effect: KEDialogEffect, dialog: String) {
+		
+		print("showDialog")
 		
 		var characterName: String
 		
 		if dialogCharacters.keys.contains(character) {
 			characterName = character
 		} else {
+			print("character not found, defaulting")
 			characterName = "default"
 		}
 		
@@ -70,13 +74,8 @@ class KEScene: SKScene {
 			
 		}
 		
-		lblDialogText = KEAnimatedDialogLabelNode(fontName: dialogCharacters[characterName]!.fontStyle.fontName, fontSize: dialogCharacters[characterName]!.fontStyle.pointSize, fontColor: dialogCharacters[characterName]!.textColor)
+		lblDialogText.set(fontName: dialogCharacters[characterName]!.fontStyle.fontName, fontSize: dialogCharacters[characterName]!.fontStyle.pointSize, fontColor: dialogCharacters[characterName]!.textColor)
 		
-		if lblDialogText == nil {
-			return
-		}
-		
-		let margin = lblDialogText!.fontSize * 2
 		let boxShape = KEDialogShapeNode(rectOf: boxSize) 
 		boxShape.position = CGPoint(x: boxWidth/2, y: boxHeight/2)
 		boxShape.strokeColor = SKColor.gray
@@ -99,10 +98,10 @@ class KEScene: SKScene {
 		}
 		
         //Set dialog text location.
-		var pos = CGPoint(x: lblDialogText!.fontSize * 2, y: boxHeight - lblDialogText!.fontSize * 2)
+		var pos = CGPoint(x: 2, y: boxHeight - 2)
 		//Convert position to view coordinates. In a view Y=0 is at the top, not at the bottom like in a scene.
 		pos = convertToViewCoordinates(sceneCoordinates: pos)
-		lblDialogText!.set(stringToAnimate: dialog, characterDelay: 100000, positionOfTextBox: pos, sizeOfTextBox: CGSize(width: boxSize.width - margin * 2, height: boxSize.height - margin * 2))
+		lblDialogText.set(stringToAnimate: dialog, characterDelay: 100000, positionOfTextBox: pos, sizeOfTextBox: CGSize(width: boxSize.width - 4, height: boxSize.height - 4))
 		
     }
 	
@@ -121,24 +120,52 @@ class KEScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
-		gameSettings.testCounter = 3
+		print("touchesBegan")
 		
-		cleanDialogNodes()
-		
-		switch gameSettings.testCounter {
+		if !lblDialogText.isAnimating {
 			
-		case 1:
-			ShowDialog(character: "カッレ", expression: "smile", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "今日は、タカちゃん! これはテストの為の長い文書です。この文書で、分が長すぎたら、どうなるか試します。まだテキストが足りないから、つづく。結局新しい一列が出るはずです。")
-		case 2:
-			ShowDialog(character: "カッレ", expression: "frown", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "ところで、甘いもの食べすぎたらダメだ！")
-		case 3:
-			ShowDialog(character: "Kalle", expression: "frown", style: .standard, effect: .none, dialog: "Let's take this in english")
-		default:
-			soundModule.playSoundEffect(effectName: "Neko")
+			print("lblDialogText is not animating")
+			
+			if lblDialogText.multipart {
+				
+				print("multipart detected")
+				
+				lblDialogText.reset()
+				
+				lblDialogText.awaitingAnimationStart = true
+				
+				print("lblDialogText.awaitingAnimationStart = true")
+				
+			} else {
+				
+				gameSettings.testCounter += 1
+				
+				print("New dialog start")
+				
+				cleanDialogNodes()
+				
+				lblDialogText.reset()
+				
+				switch gameSettings.testCounter {
+					
+				case 1:
+					showDialog(character: "カッレ", expression: "smile", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "今日は、タカちゃん! これはテストの為の長い文書です。この文書で、分が長すぎたら、どうなるか試します。まだテキストが足りないから、つづく。結局新しい一列が出るはずです。")
+				case 2:
+					showDialog(character: "カッレ", expression: "frown", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "ところで、甘いもの食べすぎたらダメだ！")
+				case 3:
+					showDialog(character: "Kalle", expression: "frown", style: .standard, effect: .none, dialog: "Let's take this in english")
+				default:
+					soundModule.playSoundEffect(effectName: "Neko")
+				}
+			}
+				
 		}
+
     }
 	
 	func cleanDialogNodes() {
+		
+		print("cleanDialogNodes")
 		
 		for node in children {
 			
@@ -147,6 +174,8 @@ class KEScene: SKScene {
 				node.removeFromParent()
 			}
 			
+			self.view!.willRemoveSubview(lblDialogText.textBox)
+			
 		}
 		
 	}
@@ -154,14 +183,13 @@ class KEScene: SKScene {
 	override func update(_ currentTime: TimeInterval) {
 		super.update(currentTime)
 		
-		if lblDialogText != nil {
 			
-			if lblDialogText!.awaitingAnimationStart {
-				self.view!.addSubview(lblDialogText!.textBox)
-				lblDialogText!.startAnimation()
-			}
-			
+		if lblDialogText.awaitingAnimationStart && !lblDialogText.isAnimating {
+			print("Scene update: lblDialogText is awaiting animation and is not animating. Starting animation...")
+			self.view!.addSubview(lblDialogText.textBox)
+			lblDialogText.startAnimation()
 		}
+		
 		
 	}
 	

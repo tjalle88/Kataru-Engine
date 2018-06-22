@@ -11,11 +11,11 @@ import UIKit
 struct SKGameSettings {
 	var titleFont: String = "MarkerFelt-Thin"
 	var defaultFont: String = "Helvetica Neue"
-	var defaultFontSize: CGFloat = 11
+	var defaultFontSize: CGFloat = 30
 	var gameTitle: String = "Game!"
 	var textAnimationDelayInSeconds: Double = 0.2
 	var testBool: Bool = false
-	var testCounter: Int = 1
+	var testCounter: Int = 0
 	var defaultFontColor: UIColor = UIColor.black
 }
 

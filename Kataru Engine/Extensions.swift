@@ -8,15 +8,22 @@
 
 import SpriteKit
 
-extension String {
+extension UITextView {
 	
-	func sizeOfLabelNode(fontName: String, fontSize: CGFloat) -> CGSize {
+	/** Returns true if the text will cause the UITextbox to scroll **/
+	func willScroll(withString st: String) -> Bool {
 		
-		let label = SKLabelNode(fontNamed: fontName)
-		label.fontSize = fontSize
-		label.text = self
+		let dummy = UITextView(frame: self.frame)
 		
-		return label.frame.size
+		dummy.font = self.font!
+		dummy.text = st
+		
+		if dummy.contentSize.height > dummy.frame.size.height {
+			return true
+		} else {
+			return false
+		}
 		
 	}
+	
 }
