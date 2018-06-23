@@ -20,6 +20,7 @@
 		E3899C96200FE3BE0091DB7A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3899C95200FE3BE0091DB7A /* MainMenu.swift */; };
 		E3899C982017CA8A0091DB7A /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3899C972017CA8A0091DB7A /* select.wav */; };
 		E39A437120712E1F00AFB9C7 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = E39A437020712E1E00AFB9C7 /* click.wav */; };
+		E3C24F5620DEA66A00E2A490 /* Test_Song.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E3C24F5520DEA66A00E2A490 /* Test_Song.m4a */; };
 		E3CCA0AE207A991800650D39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCA0AD207A991800650D39 /* Extensions.swift */; };
 		E3F223102044932F00D4FB60 /* KEScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2230F2044932F00D4FB60 /* KEScene.swift */; };
 		E3F22313204493E800D4FB60 /* KEDialogCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */; };
@@ -70,6 +71,7 @@
 		E3899C95200FE3BE0091DB7A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		E3899C972017CA8A0091DB7A /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		E39A437020712E1E00AFB9C7 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		E3C24F5520DEA66A00E2A490 /* Test_Song.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test_Song.m4a; sourceTree = "<group>"; };
 		E3CCA0AD207A991800650D39 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E3F2230F2044932F00D4FB60 /* KEScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEScene.swift; sourceTree = "<group>"; };
 		E3F22312204493E800D4FB60 /* KEDialogCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogCharacter.swift; sourceTree = "<group>"; };
@@ -178,13 +180,13 @@
 			isa = PBXGroup;
 			children = (
 				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
+				E3FADA531FDD720D005CDA2E /* GameViewController.swift */,
 				E3F22311204493B500D4FB60 /* Extra mechanics and extensions */,
 				E3F2230C204491E000D4FB60 /* Graphics&UI */,
 				E31B62872028F90F00DCD56C /* Maps */,
 				E3FADA871FDD73A1005CDA2E /* Sound Module */,
 				E3FADA511FDD720D005CDA2E /* TitleScene.swift */,
 				E3899C95200FE3BE0091DB7A /* MainMenu.swift */,
-				E3FADA531FDD720D005CDA2E /* GameViewController.swift */,
 				E3FADA551FDD720D005CDA2E /* Main.storyboard */,
 				E3FADA581FDD720D005CDA2E /* Assets.xcassets */,
 				E3FADA5A1FDD720D005CDA2E /* LaunchScreen.storyboard */,
@@ -222,6 +224,7 @@
 				E3899C972017CA8A0091DB7A /* select.wav */,
 				E39A437020712E1E00AFB9C7 /* click.wav */,
 				E30AB36420DE8EED0023E73E /* male_voice.wav */,
+				E3C24F5520DEA66A00E2A490 /* Test_Song.m4a */,
 			);
 			path = "Sound Module";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				E3899C982017CA8A0091DB7A /* select.wav in Resources */,
 				E35234D62028DE2E00371140 /* Tiles.sks in Resources */,
+				E3C24F5620DEA66A00E2A490 /* Test_Song.m4a in Resources */,
 				E3FADA571FDD720D005CDA2E /* Main.storyboard in Resources */,
 				E3FADA591FDD720D005CDA2E /* Assets.xcassets in Resources */,
 				E3FADA841FDD727D005CDA2E /* BGM.strings in Resources */,

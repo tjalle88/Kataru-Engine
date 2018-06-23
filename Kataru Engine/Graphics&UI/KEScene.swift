@@ -27,6 +27,7 @@ class KEScene: SKScene {
 		dialogCharacters["default"] = KEDialogCharacter()
 		lblDialogText = KEAnimatedDialogLabelNode()
 		
+		
 		super.init(size: size)
 		
 	}
@@ -54,7 +55,7 @@ class KEScene: SKScene {
 		}
 		
 		let mySize = self.view!.bounds.size
-		let boxHeight = mySize.height/3
+		let boxHeight = mySize.height/3 + gameSettings.bottomPadding!
 		let boxWidth = mySize.width
 		let boxSize = CGSize(width: boxWidth, height: boxHeight)
 		let lblNameText: KEDialogLabelNode
@@ -68,7 +69,7 @@ class KEScene: SKScene {
 			lblNameText.fontSize = gameSettings.defaultFontSize
 			lblNameText.color = SKColor.white
 			lblNameText.text = characterName
-			lblNameText.position = CGPoint(x: 0, y: boxHeight)
+			lblNameText.position = CGPoint(x: 0 + gameSettings.leftPadding!, y: boxHeight)
 			lblNameText.horizontalAlignmentMode = .left
 			addChild(lblNameText)
 			
@@ -90,7 +91,7 @@ class KEScene: SKScene {
 				
 				sprPortraitNode = KEDialogSpriteNode(imageNamed: dialogCharacters[character]!.portraits[expression]!)
 				sprPortraitNode.anchorPoint = CGPoint(x: 1.0, y: 0.0)
-				sprPortraitNode.position = CGPoint(x: boxWidth, y: boxHeight)
+				sprPortraitNode.position = CGPoint(x: boxWidth - gameSettings.rightPadding!, y: boxHeight)
 				addChild(sprPortraitNode)
 				
 			}
@@ -98,10 +99,10 @@ class KEScene: SKScene {
 		}
 		
         //Set dialog text location.
-		var pos = CGPoint(x: 2, y: boxHeight - 2)
+		var pos = CGPoint(x: 2 + gameSettings.leftPadding!, y: boxHeight - 2)
 		//Convert position to view coordinates. In a view Y=0 is at the top, not at the bottom like in a scene.
 		pos = convertToViewCoordinates(sceneCoordinates: pos)
-		lblDialogText.set(stringToAnimate: dialog, characterDelay: 100000, positionOfTextBox: pos, sizeOfTextBox: CGSize(width: boxSize.width - 4, height: boxSize.height - 4))
+		lblDialogText.set(stringToAnimate: dialog, characterDelay: 100000, positionOfTextBox: pos, sizeOfTextBox: CGSize(width: boxSize.width - 4 - gameSettings.leftPadding! - gameSettings.rightPadding!, height: boxSize.height - 4 - gameSettings.bottomPadding!))
 		
     }
 	
@@ -200,6 +201,10 @@ class KEScene: SKScene {
 		}
 		
 		
+	}
+	
+	override func sceneDidLoad() {
+		soundModule.playBGM(songName: "BGM1")
 	}
 	
     

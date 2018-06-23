@@ -8,10 +8,6 @@
 
 import UIKit
 
-var gameSettings = SKGameSettings()
-///The sound module of the game
-let soundModule = KEAudioModule(numberOfSoundPlayers: 5)
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

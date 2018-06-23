@@ -20,10 +20,8 @@ enum LoadFileError: Error {
 class KEAudioModule {
 	
 	fileprivate var audioEngine: AVAudioEngine
-	fileprivate var playerNodeBGM: AVAudioPlayerNode
+	fileprivate var playerNodeBGM: KEAudioPlayer
     fileprivate var soundPlayers: [KEAudioPlayer]
-	fileprivate var bgmPlaybackComplete: Bool
-	fileprivate var bgmSongPlaying: String
 	fileprivate let audioTimeZero = AVAudioTime(sampleTime: 0, atRate: 44100)
 	
 	
@@ -33,11 +31,11 @@ class KEAudioModule {
 
 		
 		audioEngine = AVAudioEngine()
-		playerNodeBGM = AVAudioPlayerNode()
+		playerNodeBGM = KEAudioPlayer()
+		playerNodeBGM.looping = true
 		
-		
-		audioEngine.attach(playerNodeBGM)
-		audioEngine.connect(playerNodeBGM, to: audioEngine.mainMixerNode, format: nil)
+		audioEngine.attach(playerNodeBGM.node)
+		audioEngine.connect(playerNodeBGM.node, to: audioEngine.mainMixerNode, format: nil)
 		
         //Create the number of players requested
 		soundPlayers = [KEAudioPlayer]()
@@ -59,9 +57,6 @@ class KEAudioModule {
             print("Engine start failure")
         }
 		
-		bgmPlaybackComplete = false
-		
-		bgmSongPlaying = ""
         
 	}
 	
@@ -70,10 +65,6 @@ class KEAudioModule {
     func playBGM(songName: String) {
 		
 		if songName == "" {
-			return
-		}
-		
-		if songName == bgmSongPlaying {
 			return
 		}
 		
@@ -95,7 +86,7 @@ class KEAudioModule {
 	
 	func pauseBGM() {
 		
-		if !bgmPlaybackComplete {
+		if !playerNodeBGM.isPlaying {
 			playerNodeBGM.pause()
 		}
 		else {
@@ -126,11 +117,6 @@ class KEAudioModule {
         
     }
 	
-	//Playback completetion handler of bgm node
-	func bgmCompletionHandler() {
-		bgmPlaybackComplete = true
-	}
-	
     
     //Loads the requested file to the bgm player
     func loadMusic(fileName: String, fileType: String) throws {
@@ -148,12 +134,9 @@ class KEAudioModule {
         
         try audioFile = AVAudioFile(forReading: url)
 		
-		if bgmPlaybackComplete {
-			playerNodeBGM.stop()
-			bgmPlaybackComplete = false
-		}
-		playerNodeBGM.scheduleFile(audioFile, at: audioTimeZero , completionHandler: bgmCompletionHandler)
-        
+		playerNodeBGM.scheduleFile(fileName: fileName, file: audioFile, at: audioTimeZero)
+		playerNodeBGM.play()
+		
     }
     
     
