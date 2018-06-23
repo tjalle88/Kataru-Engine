@@ -149,10 +149,14 @@ class KEScene: SKScene {
 				switch gameSettings.testCounter {
 					
 				case 1:
+					
+					gameSettings.language = KELanguage.japanese
 					showDialog(character: "カッレ", expression: "smile", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "今日は、タカちゃん! これはテストの為の長い文書です。この文書で、分が長すぎたら、どうなるか試します。まだテキストが足りないから、つづく。結局新しい一列が出るはずです。")
 				case 2:
+					gameSettings.language = KELanguage.japanese
 					showDialog(character: "カッレ", expression: "frown", style: KEDialogStyle.standard, effect: KEDialogEffect.none, dialog: "ところで、甘いもの食べすぎたらダメだ！")
 				case 3:
+					gameSettings.language = KELanguage.english
 					showDialog(character: "Kalle", expression: "frown", style: .standard, effect: .none, dialog: "Let's take this in english")
 				default:
 					soundModule.playSoundEffect(effectName: "Neko")
@@ -183,7 +187,12 @@ class KEScene: SKScene {
 	override func update(_ currentTime: TimeInterval) {
 		super.update(currentTime)
 		
-			
+		//Update the textbox
+		if lblDialogText.isAnimating {
+			lblDialogText.update()
+		}
+		
+		//Start new animation
 		if lblDialogText.awaitingAnimationStart && !lblDialogText.isAnimating {
 			print("Scene update: lblDialogText is awaiting animation and is not animating. Starting animation...")
 			self.view!.addSubview(lblDialogText.textBox)

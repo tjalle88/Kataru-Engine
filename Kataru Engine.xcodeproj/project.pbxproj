@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E3077AAA1FF2840000F9B868 /* neko.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3077AA91FF2840000F9B868 /* neko.wav */; };
+		E30AB36520DE8EED0023E73E /* male_voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = E30AB36420DE8EED0023E73E /* male_voice.wav */; };
+		E30AB36720DE96680023E73E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30AB36620DE96680023E73E /* Globals.swift */; };
 		E30E1AD4207A4E2E001FE029 /* KEDialogSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E1AD3207A4E2E001FE029 /* KEDialogSpriteNode.swift */; };
 		E30E1AD6207A4F4B001FE029 /* KEDialogLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E1AD5207A4F4B001FE029 /* KEDialogLabelNode.swift */; };
 		E30E1AD8207A6717001FE029 /* KEDialogShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E1AD7207A6717001FE029 /* KEDialogShapeNode.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		E3077AA91FF2840000F9B868 /* neko.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = neko.wav; sourceTree = SOURCE_ROOT; };
+		E30AB36420DE8EED0023E73E /* male_voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = male_voice.wav; sourceTree = "<group>"; };
+		E30AB36620DE96680023E73E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		E30E1AD3207A4E2E001FE029 /* KEDialogSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogSpriteNode.swift; sourceTree = "<group>"; };
 		E30E1AD5207A4F4B001FE029 /* KEDialogLabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogLabelNode.swift; sourceTree = "<group>"; };
 		E30E1AD7207A6717001FE029 /* KEDialogShapeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEDialogShapeNode.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				E3F2231420449E6E00D4FB60 /* KEGeneralFunctions.swift */,
+				E3CCA0AD207A991800650D39 /* Extensions.swift */,
+				E30AB36620DE96680023E73E /* Globals.swift */,
 			);
 			path = "Extra mechanics and extensions";
 			sourceTree = "<group>";
@@ -171,12 +177,11 @@
 		E3FADA4A1FDD720D005CDA2E /* Kataru Engine */ = {
 			isa = PBXGroup;
 			children = (
+				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
 				E3F22311204493B500D4FB60 /* Extra mechanics and extensions */,
 				E3F2230C204491E000D4FB60 /* Graphics&UI */,
 				E31B62872028F90F00DCD56C /* Maps */,
 				E3FADA871FDD73A1005CDA2E /* Sound Module */,
-				E3FADA4B1FDD720D005CDA2E /* AppDelegate.swift */,
-				E3CCA0AD207A991800650D39 /* Extensions.swift */,
 				E3FADA511FDD720D005CDA2E /* TitleScene.swift */,
 				E3899C95200FE3BE0091DB7A /* MainMenu.swift */,
 				E3FADA531FDD720D005CDA2E /* GameViewController.swift */,
@@ -216,6 +221,7 @@
 				E3077AA91FF2840000F9B868 /* neko.wav */,
 				E3899C972017CA8A0091DB7A /* select.wav */,
 				E39A437020712E1E00AFB9C7 /* click.wav */,
+				E30AB36420DE8EED0023E73E /* male_voice.wav */,
 			);
 			path = "Sound Module";
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				E31B62892028F93300DCD56C /* TestWorld.sks in Resources */,
 				E3FADA5C1FDD720D005CDA2E /* LaunchScreen.storyboard in Resources */,
 				E35234D72028DE2E00371140 /* Assets.xcassets in Resources */,
+				E30AB36520DE8EED0023E73E /* male_voice.wav in Resources */,
 				E3FADA861FDD727D005CDA2E /* SoundEffects.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +381,7 @@
 				E3FADA831FDD727D005CDA2E /* KEAudioModule.swift in Sources */,
 				E3CCA0AE207A991800650D39 /* Extensions.swift in Sources */,
 				E3F223102044932F00D4FB60 /* KEScene.swift in Sources */,
+				E30AB36720DE96680023E73E /* Globals.swift in Sources */,
 				E3FADA541FDD720D005CDA2E /* GameViewController.swift in Sources */,
 				E3FADA4C1FDD720D005CDA2E /* AppDelegate.swift in Sources */,
 				E3F22313204493E800D4FB60 /* KEDialogCharacter.swift in Sources */,

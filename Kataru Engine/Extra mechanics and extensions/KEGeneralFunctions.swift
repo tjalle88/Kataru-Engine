@@ -31,36 +31,3 @@ func KEIsNumeric(text: String) -> Bool {
 	
 }
 
-	/*
-	//Animates a text string one letter at a time in the label node. Each letter has a delay between them specified by the argument. The kabel node starts empty.
-	func letterByLetterAnimation(textToAnimate: String, animationTimeInMilliseconds: Int) {
-		
-		self.text = ""
-		
-		for ch in textToAnimate {
-			
-			diplayTextAfterDelay(textToDisplay: self.text! + String(ch), delayInMilliseconds: animationTimeInMilliseconds)
-			
-		}
-		
-		return
-		
-	}
-	
-	func diplayTextAfterDelay(textToDisplay: String, delayInMilliseconds: Int) {
-		
-		while true {
-			
-			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(delayInMilliseconds), execute: {
-				
-				self.text = textToDisplay
-				return
-				
-			})
-			
-		}
-		
-	}
-	
-}
-*/
